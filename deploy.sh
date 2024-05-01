@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 CURRENT_DIR=`pwd`
-[[ ! -e '~/.vimundodir']] || mkdir ~/.vimundodir
+if [[ ! -e ~/.vimundodir ]]; then
+    mkdir ~/.vimundodir
+fi
 rm -rf ~/.vimundodir/*
 
 #backup the .vimrc and .vim
@@ -20,3 +22,4 @@ cp -r "$CURRENT_DIR" ~/.vim/
 
 rm -rf "$CURRENT_DIR"
 exit
+
